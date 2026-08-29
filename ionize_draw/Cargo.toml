@@ -1,0 +1,40 @@
+[package]
+name = "ionize_draw"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.90"
+license = "MPL-2.0"
+description = "Draw ionize cfgs as SVG"
+readme = "README.md"
+documentation = "https://docs.rs/ionize_draw"
+include = [
+    "/src/**",
+    "/assets/**",
+    "/build.rs",
+    "/Cargo.toml",
+    "/README.md",
+    "/LICENSE"
+]
+
+[features]
+default = []
+std = ["harfrust/std", "skrifa/std", "thiserror/std"]
+
+[dependencies]
+harfrust = { version = "0.13", default-features = false, features = ["libm"] }
+hashbrown = { version = "0.17", default-features = false, features = ["default-hasher", "inline-more"] }
+ionize = { package = "ionize_core", version = "0.1.0", path = "../ionize_core" }
+libm = "0.2"
+skrifa = { version = "0.46", default-features = false, features = ["libm"] }
+smallvec = "1"
+thiserror = { version = "2", default-features = false }
+
+[build-dependencies]
+base64 = "0.22"
+
+[dev-dependencies]
+# TODO: setup proper benchmarks
+criterion = "0.7"
+
+[lints]
+workspace = true

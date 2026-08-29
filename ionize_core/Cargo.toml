@@ -1,0 +1,30 @@
+[package]
+name = "ionize_core"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+readme = "README.md"
+documentation = "https://docs.rs/ionize_core"
+include = [
+    "/src/**",
+    "/Cargo.toml",
+    "/LICENSE",
+    "/README.md",
+]
+description = "Parse ion graphs"
+
+[lib]
+name = "ionize"
+
+[dependencies]
+thiserror = { version = "2", default-features = false }
+
+[dev-dependencies]
+# TODO: Setup proper benchmarks
+criterion = "0.7"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+
+[lints]
+workspace = true
