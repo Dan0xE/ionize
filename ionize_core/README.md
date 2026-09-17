@@ -21,7 +21,7 @@ graph.connect(a, b);
 
 let result = layout(&graph, &Opts::default())?;
 assert_eq!(result.nodes[a.index()].id, a);
-# Ok::<(), ionize::LayoutErr>(())
+Ok::<(), ionize::LayoutErr>(())
 ```
 
 The layout algorithm is adapted from

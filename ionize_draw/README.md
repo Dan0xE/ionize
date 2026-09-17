@@ -8,7 +8,7 @@
 use ionize::{Graph, Node, Opts, Size};
 use ionize_draw::{Block, Cell, Col, Diagram, Renderer, Row, Table};
 
-# fn example() -> ionize_draw::Result<()> {
+fn example() -> ionize_draw::Result<()> {
 let mut graph = Graph::new();
 graph.add(Node::new(Size::default()));
 
@@ -17,7 +17,7 @@ table.push(Row::new([Cell::new("return")]));
 let diagram = Diagram::new(graph, vec![Block::new("Exit", table)])?;
 let svg = Renderer::new()?.render(diagram, &Opts::default())?;
 assert!(svg.starts_with("<?xml"));
-# Ok(())
-# }
+Ok(())
+}
 ```
 
